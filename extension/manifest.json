@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Güvenlink",
+  "version": "1.0.0",
+  "description": "USOM destekli guvenlik kontrol eklentisi",
+  "permissions": [
+    "storage",
+    "tabs",
+    "alarms",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Guvenlik",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content-script.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "warning.html",
+        "warning.js",
+        "styles.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "guvenlink@example.com"
+    }
+  }
+}

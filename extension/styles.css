@@ -1,0 +1,235 @@
+:root {
+  --bg-main: #0a0f14;
+  --bg-panel: rgba(23, 31, 42, 0.72);
+  --border: rgba(255, 255, 255, 0.08);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #0ea5e9;
+  --safe: #10b981;
+  --safe-bg: rgba(16, 185, 129, 0.12);
+  --suspicious: #f59e0b;
+  --suspicious-bg: rgba(245, 158, 11, 0.14);
+  --malicious: #ef4444;
+  --malicious-bg: rgba(239, 68, 68, 0.14);
+  --radius-lg: 18px;
+  --radius-md: 12px;
+}
+
+body[data-theme="light"] {
+  --bg-main: #f4efe6;
+  --bg-panel: rgba(255, 252, 245, 0.95);
+  --border: rgba(26, 32, 44, 0.08);
+  --text-primary: #16202a;
+  --text-secondary: #52606d;
+  --text-muted: #6b7280;
+  --accent: #0b74c9;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: radial-gradient(circle at 50% -20%, #1e293b, var(--bg-main));
+  color: var(--text-primary);
+}
+
+body[data-theme="light"] {
+  background: radial-gradient(circle at 50% -20%, #fff7ec, var(--bg-main));
+}
+
+.popup {
+  width: 360px;
+}
+
+.panel {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hero,
+.card,
+.support-row {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+body[data-theme="light"] .hero {
+  background: linear-gradient(135deg, #fffdf8, #efe6d7);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-size: 24px;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.muted { color: var(--text-muted); }
+.small { font-size: 12px; }
+
+#hostname {
+  margin: 0 0 14px;
+  font-size: 13px;
+  min-height: 16px;
+}
+
+.state {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.state-safe { background: var(--safe-bg); color: var(--safe); }
+.state-suspicious { background: var(--suspicious-bg); color: var(--suspicious); }
+.state-malicious { background: var(--malicious-bg); color: var(--malicious); }
+
+.reasons {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.button-link,
+.support-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 42px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.button-button {
+  border: 0;
+  cursor: pointer;
+}
+
+.button-link {
+  background: var(--accent);
+  color: #fff;
+}
+
+.support-row {
+  padding: 12px;
+}
+
+.support-link {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+body[data-theme="light"] .support-link {
+  background: rgba(15, 23, 42, 0.04);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.hidden {
+  display: none;
+}
+
+.settings-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.setting-field {
+  display: grid;
+  gap: 6px;
+}
+
+.setting-field span {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.setting-field select {
+  width: 100%;
+  min-height: 40px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  padding: 8px 10px;
+  appearance: none;
+}
+
+.setting-field select option {
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+body[data-theme="light"] .setting-field select {
+  background: rgba(15, 23, 42, 0.04);
+}
+
+body[data-theme="light"] .setting-field select option {
+  background: #fffdf8;
+  color: #16202a;
+}
+
+.warning-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.warning-card {
+  max-width: 520px;
+  width: 100%;
+}

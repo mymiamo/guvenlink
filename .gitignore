@@ -1,0 +1,11 @@
+backend/storage/cache/*.json
+backend/storage/logs/*.log
+backend/storage/logs/*.ndjson
+node_modules/
+backend/storage/cache/*.json
+backend/storage/logs/*.log
+backend/storage/logs/*.ndjson
+guvenlik-firefox.xpi
+guvenlik-firefox.zip
+guvenlik-chromium.zip
+node_modules/

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Güvenlik Uyarısı</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="warning">
+  <main class="warning-shell">
+    <section class="card warning-card glass-panel">
+      <div class="warning-hero">
+        <div class="warning-icon-container">⚠</div>
+        <div class="warning-copy">
+          <p class="eyebrow warning-eyebrow">Erişim Durduruldu</p>
+          <h1 id="warningTitle" class="warning-title">Bu bağlantı riskli olabilir</h1>
+          <p class="warning-lead muted">Güvenlink bu sayfaya geçmeden önce bağlantıyı durdurdu. Devam etmeden önce sinyalleri ve servis doğrulamalarını inceleyin.</p>
+        </div>
+      </div>
+      <div id="targetUrl" class="target-url-block"></div>
+
+      <div class="detail-grid">
+        <div class="detail-item"><span class="muted small">Karar</span><strong id="warningVerdict">-</strong></div>
+        <div class="detail-item"><span class="muted small">Risk skoru</span><strong id="warningScore">-</strong></div>
+        <div class="detail-item"><span class="muted small">Güven düzeyi</span><strong id="warningConfidence">-</strong></div>
+        <div class="detail-item"><span class="muted small">Gecikme</span><strong id="warningLatency">-</strong></div>
+      </div>
+
+      <div class="card-footer" style="border:0;padding:0;margin:12px 0;">
+        <div class="footer-item"><span class="muted small">Kaynak</span><span id="warningSource" class="small">-</span></div>
+        <div class="footer-item"><span class="muted small">Son güncelleme</span><span id="warningUpdatedAt" class="small">-</span></div>
+      </div>
+
+      <div id="warningDegraded" class="warning-banner hidden"></div>
+
+      <div id="warningUsomDetails" class="detail-grid warning-detail-grid hidden">
+        <div class="detail-item"><span class="muted small">Kategori</span><strong id="warningUsomCategory">-</strong></div>
+        <div class="detail-item"><span class="muted small">Tip</span><strong id="warningUsomType">-</strong></div>
+      </div>
+
+      <section class="warning-section">
+        <h2>Tespit Nedenleri</h2>
+        <ul id="warningReasons" class="rich-list"></ul>
+      </section>
+
+      <section class="warning-section">
+        <h2>Servis Kontrolleri</h2>
+        <ul id="warningChecks" class="rich-list"></ul>
+      </section>
+
+      <div class="button-row warning-actions">
+        <button id="goBack" class="btn-secondary">Sekmeyi Kapat</button>
+        <button id="reportFalsePositive" class="btn-secondary">Yanlış Pozitif Bildir</button>
+        <button id="continueAnyway" class="btn-danger">Riskli Siteye Devam Et</button>
+      </div>
+      <p id="falsePositiveStatus" class="muted small" style="margin-top:10px;"></p>
+    </section>
+  </main>
+  <script src="shared.js"></script>
+  <script src="warning.js"></script>
+</body>
+</html>

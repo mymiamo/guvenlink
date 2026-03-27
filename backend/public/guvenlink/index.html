@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Güvenlink Gizlilik Politikası</title>
+  <meta name="description" content="Güvenlink tarayıcı uzantısı için gizlilik politikası.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f6fb;
+      --card: #ffffff;
+      --text: #162033;
+      --muted: #5b6880;
+      --line: #d8dfeb;
+      --accent: #1456d9;
+      --accent-soft: #e8f0ff;
+      --ok: #0f766e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(20, 86, 217, 0.10), transparent 28rem),
+        linear-gradient(180deg, #f7f9fd 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .wrap {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 64px;
+    }
+
+    .hero,
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 14px 40px rgba(18, 34, 66, 0.08);
+    }
+
+    .hero {
+      padding: 32px;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      margin: 16px 0 10px;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.08;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 72ch;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .meta {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .card {
+      padding: 26px 24px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .note {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #f6fbfa;
+      border: 1px solid #c9ebe4;
+      color: #0f4c45;
+    }
+
+    .footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    code {
+      padding: 2px 6px;
+      border-radius: 8px;
+      background: #f1f4fa;
+      border: 1px solid #e2e8f3;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100% - 20px, 960px);
+        padding-top: 20px;
+      }
+
+      .hero,
+      .card {
+        border-radius: 16px;
+      }
+
+      .hero,
+      .card {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Güvenlink</div>
+      <h1>Gizlilik Politikası</h1>
+      <p class="lead">
+        Bu politika, Güvenlink tarayıcı uzantısının hangi verileri işlediğini, bu verileri neden kullandığını,
+        kimlerle paylaşabileceğini ve kullanıcıların hangi kontrol haklarına sahip olduğunu açıklar.
+      </p>
+      <div class="meta">Son güncelleme: 27 Mart 2026</div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>1. Hizmetin amacı</h2>
+        <p>
+          Güvenlink, ziyaret edilen sayfaları ve bağlantıları zararlı, şüpheli veya güvenli olup olmadıkları açısından
+          değerlendiren bir güvenlik uzantısıdır. Uzantı; tehdit kontrolü, uyarı gösterimi, yerel güvenilir liste yönetimi,
+          tehdit verisi senkronizasyonu ve kullanıcı geri bildirimi toplama amaçlarıyla çalışır.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>2. İşlenen veriler</h2>
+        <p>Güvenlink aşağıdaki veri türlerini işleyebilir:</p>
+        <ul>
+          <li>
+            <strong>Web geçmişi ve bağlantı adresleri:</strong> Aktif sekmenin URL’si ile kullanıcının tıkladığı veya
+            üzerine geldiği bağlantı adresleri güvenlik analizi amacıyla işlenebilir.
+          </li>
+          <li>
+            <strong>Web sitesi içeriğinin sınırlı bir bölümü:</strong> Uzantı tam sayfa metnini toplamaz; ancak sayfadaki
+            <em>bağlantı adreslerini</em> (örneğin <code>&lt;a href&gt;</code> değerlerini) risk kontrolü için okuyabilir.
+          </li>
+          <li>
+            <strong>Yerel ayarlar ve listeler:</strong> API adresi, koruma modu, tema tercihi, güvenilir liste,
+            geçici izin verilen adresler ve günlük koruma istatistikleri tarayıcının yerel depolamasında tutulabilir.
+          </li>
+          <li>
+            <strong>İsteğe bağlı kullanıcı bildirimi:</strong> Kullanıcı bir site raporu veya yanlış pozitif bildirimi
+            gönderirse ilgili URL, alan adı, isteğe bağlı not ve işlem zamanı sunucuya kaydedilebilir.
+          </li>
+          <li>
+            <strong>Teknik ağ verileri:</strong> Sunucu tarafında oran sınırlama, güvenlik ve hata inceleme amaçlarıyla
+            IP adresi, istek yolu, HTTP yöntemi, durum kodu ve süre bilgisi loglanabilir.
+          </li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>3. Verilerin kullanım amaçları</h2>
+        <ul>
+          <li>Zararlı veya şüpheli bağlantıları tespit etmek ve kullanıcıyı uyarmak.</li>
+          <li>Tehdit veritabanını senkronize etmek ve koruma kararlarını güncel tutmak.</li>
+          <li>Kullanıcının ayarlarını, güvenilir liste tercihlerini ve geçici izin kararlarını saklamak.</li>
+          <li>Kullanıcı tarafından gönderilen raporları incelemek ve tehdit kayıtlarını iyileştirmek.</li>
+          <li>Kötüye kullanım önleme, oran sınırlama, servis güvenliği ve hata ayıklama yapmak.</li>
+        </ul>
+        <p class="note">
+          Güvenlink kullanıcı verilerini reklamcılık, profil çıkarma, veri satışı, kredi değerlendirmesi veya
+          uzantının temel güvenlik amacı dışında bağımsız ticari kullanım için işlemez.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>4. Verilerin paylaşılması</h2>
+        <p>
+          Güvenlik analizi yapılabilmesi için kontrol edilen URL’ler Güvenlink sunucusuna gönderilebilir.
+          Hizmet yapılandırmasına bağlı olarak bu URL’ler aşağıdaki harici tehdit kontrol servisleri ile de
+          karşılaştırılabilir:
+        </p>
+        <ul>
+          <li>USOM</li>
+          <li>Google Safe Browsing</li>
+          <li>VirusTotal</li>
+        </ul>
+        <p>
+          Kullanıcı verileri üçüncü taraflara satılmaz. Paylaşım yalnızca güvenlik analizi, servis işletimi ve
+          kullanıcı tarafından açıkça tetiklenen raporlama amacıyla sınırlıdır.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>5. Yerel depolama ve saklama süresi</h2>
+        <ul>
+          <li>
+            Tarayıcı içindeki ayarlar, güvenilir liste kayıtları, geçici izin kayıtları ve günlük özet istatistikler
+            kullanıcı cihazında saklanır.
+          </li>
+          <li>
+            Yerel tarayıcı verileri, kullanıcı uzantıyı kaldırdığında veya uzantı verilerini temizlediğinde silinir.
+          </li>
+          <li>
+            Sunucu tarafındaki istek logları ve kullanıcı raporları şu anki sistem davranışına göre otomatik olarak
+            silinmez; işletimsel ihtiyaçlar doğrultusunda hizmet işletmecisi tarafından manuel olarak temizlenebilir.
+          </li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>6. Toplanmayan veri türleri</h2>
+        <p>Güvenlink aşağıdaki veri türlerini toplamak için tasarlanmamıştır:</p>
+        <ul>
+          <li>Ad, e-posta adresi veya kimlik numarası gibi açık kimlik bilgileri</li>
+          <li>Sağlık verileri</li>
+          <li>Finansal veya ödeme bilgileri</li>
+          <li>Şifreler, PIN bilgileri veya kimlik doğrulama sırları</li>
+          <li>E-posta içeriği, mesajlaşma içeriği veya kişisel iletişimler</li>
+          <li>Form alanı içerikleri, tuş vuruş kayıtları veya tam web sayfası metni</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>7. Uzak kod</h2>
+        <p>
+          Güvenlink, uzantı paketine dahil olmayan harici JavaScript veya Wasm dosyalarını indirip çalıştırmaz.
+          Uzantı uzaktaki servislerden veri alabilir; ancak bu veriler uzaktan yürütülen kod olarak kullanılmaz.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>8. Kullanıcı hakları ve iletişim</h2>
+        <p>
+          Yerel uzantı verilerini uzantıyı kaldırarak veya tarayıcı uzantı verilerini temizleyerek silebilirsiniz.
+          Sunucu tarafında tutulan rapor veya log kayıtlarıyla ilgili talepleriniz için bizimle iletişime geçebilirsiniz.
+        </p>
+        <p>
+          İletişim: <a href="mailto:guvenlink@example.com">guvenlink@example.com</a>
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>9. Politika değişiklikleri</h2>
+        <p>
+          Bu politika, hizmet davranışında veya yasal yükümlülüklerde değişiklik olması halinde güncellenebilir.
+          Güncel sürüm bu sayfada yayımlanır.
+        </p>
+      </article>
+    </section>
+
+    <div class="footer">
+      Bu sayfa Güvenlink tarayıcı uzantısı için hazırlanmıştır.
+    </div>
+  </main>
+</body>
+</html>

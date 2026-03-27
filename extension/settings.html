@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Güvenlink Ayarlar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="popup settings-popup">
+  <main class="panel">
+    <section class="hero settings-hero">
+      <p class="eyebrow">Güvenlink</p>
+      <h1>Ayarlar</h1>
+      <p class="muted hero-copy">Koruma davranışını, görünümü ve canlı tarama akışını buradan yönetebilirsiniz.</p>
+    </section>
+    <section class="card">
+      <h2>Koruma Ayarları</h2>
+      <div class="settings-grid">
+        <label class="setting-field">
+          <span>Güvenlik modu</span>
+          <select id="securityMode">
+            <option value="strict">Katı</option>
+            <option value="balanced">Dengeli</option>
+            <option value="informational">Sadece bilgilendir</option>
+          </select>
+        </label>
+        <label class="setting-field">
+          <span>Çevrimdışı davranış</span>
+          <select id="offlineBehavior">
+            <option value="unknown">Belirsiz göster</option>
+            <option value="safe">Güvenli kabul et</option>
+          </select>
+        </label>
+        <label class="setting-field">
+          <span>Tema</span>
+          <select id="themeMode">
+            <option value="dark">Koyu</option>
+            <option value="light">Açık</option>
+          </select>
+        </label>
+        <label class="setting-field setting-switch">
+          <span>Telemetri</span>
+          <input id="telemetryEnabled" type="checkbox">
+        </label>
+      </div>
+      <div class="button-row"><button id="saveSettings" class="button-link button-button" type="button">Kaydet</button></div>
+      <p id="saveStatus" class="muted small" style="margin-top:8px;"></p>
+    </section>
+    <section class="card">
+      <h2>Güvenilir Liste</h2>
+      <div class="scan-row">
+        <input id="whitelistInput" class="scan-input" type="text" placeholder="örnek.com" autocomplete="off">
+        <button id="whitelistAdd" class="button-link button-button scan-btn" type="button">Ekle</button>
+      </div>
+      <ul id="whitelistItems" class="whitelist-list"></ul>
+    </section>
+    <section class="card">
+      <h2>Senkronizasyon</h2>
+      <div class="card-footer" style="border:0;padding:0;margin:0 0 14px;">
+        <div class="footer-item"><span class="muted small">Son senkronizasyon</span><span id="syncedAt" class="small">-</span></div>
+        <div class="footer-item"><span class="muted small">Senkron anahtarı</span><span id="syncToken" class="small">-</span></div>
+      </div>
+      <div class="button-row"><button id="syncNow" class="button-link button-button" type="button">Şimdi Senkronize Et</button></div>
+      <p id="syncStatus" class="muted small" style="margin-top:8px;"></p>
+    </section>
+  </main>
+  <script src="shared.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>

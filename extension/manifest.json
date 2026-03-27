@@ -1,0 +1,83 @@
+{
+    "manifest_version": 3,
+    "name": "Güvenlink",
+    "version": "1.1.0",
+    "description": "Baglantilari analiz eden acik kaynak guvenlik uzantisi.",
+    "icons": {
+        "16": "logo/16x16-logo.png",
+        "32": "logo/32x32-logo.png",
+        "48": "logo/48x48-logo.png",
+        "128": "logo/128x128-logo.png"
+    },
+    "permissions": [
+        "storage",
+        "tabs",
+        "alarms",
+        "webNavigation",
+        "contextMenus",
+        "notifications"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_title": "Güvenlink",
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "logo/16x16-logo.png",
+            "32": "logo/32x32-logo.png",
+            "48": "logo/48x48-logo.png",
+            "128": "logo/128x128-logo.png"
+        }
+    },
+    "options_page": "settings.html",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "css": [
+                "tooltip.css"
+            ],
+            "js": [
+                "shared.js",
+                "content-script.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "warning.html",
+                "warning.js",
+                "styles.css",
+                "tooltip.css",
+                "settings.html",
+                "settings.js",
+                "logo/16x16-logo.png",
+                "logo/32x32-logo.png",
+                "logo/48x48-logo.png",
+                "logo/128x128-logo.png",
+                "logo/16x16-yes.png",
+                "logo/32x32-yes.png",
+                "logo/48x48-yes.png",
+                "logo/128x128-yes.png",
+                "logo/16x16-waite.png",
+                "logo/32x32-wait.png",
+                "logo/48x48-wait.png",
+                "logo/128x128-wait.png",
+                "logo/16x16-danger.png",
+                "logo/32x32-danger.png",
+                "logo/48x48-danger.png",
+                "logo/128x128-danger.png"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}

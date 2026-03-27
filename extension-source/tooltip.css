@@ -1,0 +1,75 @@
+/* Güvenlink — hover tooltip (web sayfalarına inject edilen stil) */
+
+.gl-tooltip {
+  position: absolute;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  pointer-events: none;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  background: rgba(15, 23, 42, 0.92);
+  color: #f1f5f9;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gl-tooltip-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gl-tooltip-safe {
+  border-left: 3px solid #10b981;
+}
+
+.gl-tooltip-suspicious {
+  border-left: 3px solid #f59e0b;
+}
+
+.gl-tooltip-malicious {
+  border-left: 3px solid #ef4444;
+}
+
+.gl-tooltip-loading {
+  border-left: 3px solid #64748b;
+}
+
+.gl-tooltip-icon {
+  font-size: 13px;
+}
+
+.gl-tooltip-safe .gl-tooltip-icon {
+  color: #10b981;
+}
+
+.gl-tooltip-suspicious .gl-tooltip-icon {
+  color: #f59e0b;
+}
+
+.gl-tooltip-malicious .gl-tooltip-icon {
+  color: #ef4444;
+}
+
+.gl-tooltip-loading .gl-tooltip-icon {
+  color: #94a3b8;
+  display: inline-block;
+  animation: gl-spin 0.7s linear infinite;
+}
+
+@keyframes gl-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

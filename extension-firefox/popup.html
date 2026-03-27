@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Güvenlink</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="popup">
+  <main class="panel">
+    <section class="hero hero-dashboard">
+      <div class="hero-top-row">
+        <p class="eyebrow">Güvenlik Denetimi</p>
+        <button id="openSettings" class="icon-btn" title="Ayarlar" aria-label="Ayarlar">⚙</button>
+      </div>
+      <div class="verdict-icon-wrap">
+        <img id="verdictIcon" class="verdict-logo" src="logo/128x128-logo.png" draggable="false" alt="Güvenlik durumu">
+      </div>
+      <h1 id="verdictLabel">Yükleniyor...</h1>
+      <p id="hostname" class="muted"></p>
+      <div class="hero-summary">
+        <span id="verdictBadge" class="state state-safe">-</span>
+        <p id="statsLine" class="stats-line muted small"></p>
+        <p id="usageLine" class="stats-line muted small"></p>
+      </div>
+    </section>
+
+    <section id="degradedCard" class="card hidden">
+      <h2>Belirsizlik Notu</h2>
+      <p id="degradedText" class="muted" style="margin:0;"></p>
+    </section>
+
+    <section class="card">
+      <h2>Karar Özeti</h2>
+      <div class="detail-grid">
+        <div class="detail-item"><span class="muted small">Risk skoru</span><strong id="scoreValue">-</strong></div>
+        <div class="detail-item"><span class="muted small">Güven düzeyi</span><strong id="confidenceValue">-</strong></div>
+        <div class="detail-item"><span class="muted small">Kaynak</span><strong id="source">-</strong></div>
+        <div class="detail-item"><span class="muted small">Gecikme</span><strong id="latency">-</strong></div>
+      </div>
+      <div id="usomWrap" class="detail-grid hidden">
+        <div class="detail-item"><span class="muted small">Kategori</span><strong id="usomCategory">-</strong></div>
+        <div class="detail-item"><span class="muted small">Tip</span><strong id="usomType">-</strong></div>
+      </div>
+      <div class="card-footer">
+        <div class="footer-item"><span class="muted small">Son güncelleme</span><span id="updatedAt" class="small">-</span></div>
+        <div class="footer-item"><span class="muted small">Kontrol durumu</span><span id="syncState" class="small">-</span></div>
+      </div>
+      <div id="referenceWrap" class="button-row hidden">
+        <a id="referenceButton" class="button-link" href="#" target="_blank" rel="noreferrer">Kaynağa Git</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Tespit Nedenleri</h2>
+      <ul id="signals" class="rich-list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Servis Kontrolleri</h2>
+      <ul id="checks" class="rich-list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Link Tara</h2>
+      <div class="scan-row">
+        <input id="scanInput" class="scan-input" type="url" placeholder="https://örnek.com" autocomplete="off">
+        <button id="scanBtn" class="button-link button-button scan-btn" type="button">Tara</button>
+      </div>
+      <div id="scanResult" class="scan-result hidden"></div>
+    </section>
+
+    <section class="card">
+      <h2>Geri Bildirim</h2>
+      <label class="setting-field">
+        <span>Not</span>
+        <textarea id="reportNote" maxlength="200" placeholder="İsteğe bağlı not ekleyin..."></textarea>
+      </label>
+      <div class="button-row button-row-wrap">
+        <button id="submitFalsePositive" class="button-link button-button button-secondary" type="button">Yanlış Pozitif Bildir</button>
+        <button id="submitReport" class="button-link button-button" type="button">Siteyi Raporla</button>
+      </div>
+      <p id="reportStatus" class="muted small" style="margin-top:8px;"></p>
+    </section>
+  </main>
+  <script src="shared.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
